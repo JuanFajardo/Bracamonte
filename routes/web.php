@@ -7,7 +7,8 @@ Route::get('/home',function () {
     return view('home');
 });
 
-/* Inisio de Session */
+/* Inisio de Session
+//Route::Auth();*/
 Route::get('login', 'Auth\AuthController@showLoginForm');
 Route::post('login', 'Auth\AuthController@login');
 Route::get('logout', 'Auth\AuthController@logout');
