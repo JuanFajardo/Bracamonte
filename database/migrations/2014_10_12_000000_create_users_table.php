@@ -12,7 +12,7 @@ class CreateUsersTable extends Migration
             $table->string('nombres');
             $table->string('grupo');
             $table->string('login');
-            $table->string('username')->unique();
+            $table->string('username');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

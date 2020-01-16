@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => 'mysql',
 
     /*
     |--------------------------------------------------------------------------
@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => '127.0.0.1',
+            'port' => '3306',
+            'database' => 'bracamonte',
+            'username' => 'bett0',
+            'password' => '123',
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -58,9 +58,9 @@ return [
             'driver' => 'pgsql',
             'host' => 'localhost',
             'port' => '5432',
-            'database' => 'tesoreria',
+            'database' => 'bracamonte',
             'username' => 'postgres',
-            'password' => 'rrh2017',
+            'password' => 'postgres',
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
