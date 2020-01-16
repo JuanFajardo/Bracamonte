@@ -4,7 +4,7 @@ Route::get('/', function () {
     return view('gamp');
 });
 Route::get('/home',function () {
-    return view('home');
+    return view('diego');
 });
 
 /* Inisio de Session
