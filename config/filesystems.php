@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => 'local',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,11 +42,10 @@ return [
     */
 
     'disks' => [
-
         'local' => [
-            'driver' => 'local',
-            //'root' => storage_path('app'),
-            'root' => public_path('RughHXvNTFm9zzBett0zzPpFGaE2r7mjB9'),
+          'driver' => 'local',
+          //'root' => storage_path('app'),
+          'root' => public_path('b6cda5b804a986866d768637dcf0c69b'),
         ],
 
         'public' => [

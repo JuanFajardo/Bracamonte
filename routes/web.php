@@ -17,19 +17,20 @@ Route::get('/home',function () {
 
 /* Inisio de Session
 //Route::Auth();*/
+
 Route::get('login', 'Auth\AuthController@showLoginForm');
 Route::post('login', 'Auth\AuthController@login');
 Route::get('logout', 'Auth\AuthController@logout');
 
 /* Administracion de Usuarios */
-Route::get('usuarios', 'UsuarioController@index');
-Route::get('usuarios/create', 'UsuarioController@showRegistrationForm');
-Route::post('usuarios', 'UsuarioController@create');
-Route::get('usuarios/{id}', 'UsuarioController@viewuser');
-Route::get('usuarios/{id}/edit', 'UsuarioController@edit');
-Route::patch('usuarios/{id}', 'UsuarioController@update');
-Route::get('usuarios/info/ver', 'UsuarioController@profile');
-Route::post('usuarios/info/ver', 'UsuarioController@profileActulizar');
+Route::get('usuario', 'UsuarioController@index');
+Route::get('usuario/create', 'UsuarioController@showRegistrationForm');
+Route::post('usuario', 'UsuarioController@create');
+Route::get('usuario/{id}', 'UsuarioController@viewuser');
+Route::get('usuario/{id}/edit', 'UsuarioController@edit');
+Route::patch('usuario/{id}', 'UsuarioController@update');
+Route::get('usuario/info/ver', 'UsuarioController@profile');
+Route::post('usuario/info/ver', 'UsuarioController@profileActulizar');
 
 Route::resource('Medico', 'MedicoController');
 Route::resource('Especialidad', 'EspecialidadController');
@@ -39,3 +40,5 @@ Route::resource('Noticia', 'NoticiaController');
 
 Route::get('Vigencia/comando/llamar/{id}', 'VigenciaController@llamar');
 Route::get('Vigencia/comando/baja/{id}', 'VigenciaController@baja');
+
+Auth::routes();

@@ -10,10 +10,11 @@
         <li class="nav-item @yield('inicio')"><a href="{{asset('index.php')}}" class="nav-link">Inicio</a></li>
         <li class="nav-item @yield('medico')"><a href="{{asset('index.php/Medico')}}" class="nav-link">Medico</a></li>
         <li class="nav-item @yield('especialidad')"><a href="{{asset('index.php/Especialidad')}}" class="nav-link">Especialidad</a></li>
-        
+
         <li class="nav-item @yield('horario')"><a href="{{asset('index.php/Horario')}}" class="nav-link">Horario</a></li>
         <li class="nav-item @yield('atencion')"><a href="{{asset('index.php/Atencion')}}" class="nav-link">Atencion</a></li>
         <li class="nav-item @yield('noticia')"><a href="{{asset('index.php/Noticia')}}" class="nav-link">Noticias</a></li>
+        <li class="nav-item @yield('usuario')"><a href="{{asset('index.php/usuario')}}" class="nav-link">Usuario</a></li>
 
       </ul>
     </div>

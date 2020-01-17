@@ -35,7 +35,7 @@ class AuthController extends Controller
      */
     protected $redirectTo = '/home';
     protected $redirectAfterLogout = '/login';
-    protected $redirectAfterRegister = 'usuarios';
+    protected $redirectAfterRegister = 'usuario';
     /**
      * Create a new authentication controller instance.
      *
@@ -60,12 +60,11 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'nombre' => 'required|max:255',
+            'grupo' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
-            'nombres' => 'required|max:255',
-            'apellidos' => 'required|max:255',
-            'ci' => 'required|numeric',
+            'name' => 'required|max:255',
+            'username' => 'required|max:255',
         ]);
     }
 
@@ -78,24 +77,14 @@ class AuthController extends Controller
     protected function create(Request $data)//array $data)
     {
         $estado = false;
-        if($data['estado'] == 'on'){
-            $estado = true;
-        }
         User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'nombre' => $data['nombre'],
+            'grupo' => $data['grupo'],
             'password' => bcrypt($data['password']),
-            'grupo_id' => $data['grupo_id'],
-            'nombres' => $data['nombres'],
-            'apellidos' => $data['apellidos'],
-            'ci' => $data['ci'],
-            'direccion' => $data['direccion'],
-            'telefono' => $data['telefono'],
-            'observacion' => $data['observacion'],
-            'estado'=> $estado,
+            'name' => $data['name'],
+            'username' => $data['username'],
         ]);
-
-        return redirect('/usuarios');
+        return redirect('/usuario');
     }
 
 
