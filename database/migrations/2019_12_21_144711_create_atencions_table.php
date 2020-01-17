@@ -15,6 +15,9 @@ class CreateAtencionsTable extends Migration
     {
         Schema::create('atencions', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_medico');
+            $table->integer('id_especialidad');
+            $table->integer('id_horario');
             $table->timestamps();
         });
     }

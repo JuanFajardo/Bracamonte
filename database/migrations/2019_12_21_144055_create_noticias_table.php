@@ -17,11 +17,10 @@ class CreateNoticiasTable extends Migration
             $table->increments('id');
             $table->string('noticia');
             $table->text('cuerpo');
-            $table->text('archivo')->comment('foto pdf word');
+            $table->text('foto')->comment('foto pdf word');
             $table->text('link');
             $table->date('fecha');
             $table->string('tag');
-            $table->integer('id_user');
             $table->timestamps();
         });
     }

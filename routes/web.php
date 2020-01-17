@@ -1,10 +1,18 @@
 <?php
 
 Route::get('/', function () {
-    return view('gamp');
+    $medicos = \App\Medico::all();
+    $especialidads = \App\Especialidad::all();
+    $horarios = \App\Horario::all();
+    $atencions = \DB::table('atencions')->join('horarios', 'atencions.id_horario', '=', 'horarios.id')
+                                    ->join('medicos', 'atencions.id_medico', '=', 'medicos.id')
+                                    ->join('especialidads', 'atencions.id_especialidad', '=', 'especialidads.id')
+                                    ->get();
+    $noticias = \App\Noticia::all();
+    return view('diego', compact('medicos', 'especialidads', 'horarios', 'atencions', 'noticias'));
 });
 Route::get('/home',function () {
-    return view('diego');
+    return view('diegoCuerpo');
 });
 
 /* Inisio de Session
@@ -23,9 +31,11 @@ Route::patch('usuarios/{id}', 'UsuarioController@update');
 Route::get('usuarios/info/ver', 'UsuarioController@profile');
 Route::post('usuarios/info/ver', 'UsuarioController@profileActulizar');
 
-Route::resource('Boleta',   'BoletaController');
-Route::resource('Empleado', 'EmpleadoController');
-Route::resource('Empresa',  'EmpresaController');
-Route::resource('Vigencia', 'VigenciaController');
+Route::resource('Medico', 'MedicoController');
+Route::resource('Especialidad', 'EspecialidadController');
+Route::resource('Horario', 'HorarioController');
+Route::resource('Atencion', 'AtencionController');
+Route::resource('Noticia', 'NoticiaController');
+
 Route::get('Vigencia/comando/llamar/{id}', 'VigenciaController@llamar');
 Route::get('Vigencia/comando/baja/{id}', 'VigenciaController@baja');

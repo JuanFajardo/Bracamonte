@@ -17,7 +17,6 @@ class CreateMedicosTable extends Migration
             $table->increments('id');
             $table->string('medico')->comment('Nombre Completo');
             $table->string('descripcion');
-            $table->integer('id_user');
             $table->timestamps();
         });
     }

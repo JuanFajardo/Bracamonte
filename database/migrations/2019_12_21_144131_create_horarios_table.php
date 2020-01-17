@@ -17,7 +17,6 @@ class CreateHorariosTable extends Migration
             $table->increments('id');
             $table->string('horario');
             $table->string('descripcion');
-            $table->integer('id_user');
             $table->timestamps();
         });
     }

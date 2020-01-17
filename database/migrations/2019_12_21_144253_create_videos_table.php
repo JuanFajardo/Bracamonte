@@ -19,7 +19,6 @@ class CreateVideosTable extends Migration
             $table->text('descripcion');
             $table->string('hora_inicio');
             $table->string('hora_fin');
-            $table->integer('id_user');
             $table->timestamps();
         });
     }

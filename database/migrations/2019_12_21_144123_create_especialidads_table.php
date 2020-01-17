@@ -17,7 +17,6 @@ class CreateEspecialidadsTable extends Migration
             $table->increments('id');
             $table->string('especialidad');
             $table->string('descripcion');
-            $table->integer('id_user');
             $table->timestamps();
         });
     }

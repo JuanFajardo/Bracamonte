@@ -16,7 +16,6 @@ class CreateUnidadsTable extends Migration
         Schema::create('unidads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('unidad');
-            $table->integer('id_user');
             $table->timestamps();
         });
     }
